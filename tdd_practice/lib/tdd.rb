@@ -49,3 +49,42 @@ def stock_picker(arr)
     results
 end
 
+
+
+class Hanoi 
+    def initialize
+        @towers = Array.new(3) {Array.new}
+        @towers[0] = [2,1,0]
+    end
+
+    def move
+        puts "Enter two towers to select: [start, end] e.g. (0,2)"
+        next_move = gets.chomp
+        start_tower = next_move[0].to_i
+        end_tower = next_move[-1].to_i
+
+        el = (@towers[start_tower])[-1]
+        if @towers[end_tower].empty? || el < (@towers[end_tower])[-1]
+            @towers[end_tower] << @towers[start_tower].pop
+            return true
+        else
+            return false
+        end
+    end
+
+    def won?
+        sorted = @towers[2].sort.reverse
+        (0...sorted.length-1).each do |i|
+            return false if arr[i+1] > arr[i]
+        end 
+        true
+    end
+
+    def play
+        while true
+            return if won?
+            move
+        end
+    end
+
+end

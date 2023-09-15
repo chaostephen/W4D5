@@ -1,5 +1,6 @@
 require "tdd"
 require "rspec"
+
 describe Array do
     
     describe "#uniq" do 
@@ -34,10 +35,18 @@ describe "stock_picker" do
     end
 end
 
+
 describe Hanoi do
+    subject(:hanoi) {Hanoi.new}
     describe "#move" do
         it "moves correctly" do
-            
+            expect(hanoi.move).to eq(true)
+        end
+    end
+
+    describe "#won?" do
+        it "return true if won" do
+            expect(hanoi.won?).to eq(true)
         end
     end
 end
