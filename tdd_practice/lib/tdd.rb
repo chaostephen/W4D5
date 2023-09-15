@@ -73,10 +73,11 @@ class Hanoi
     end
 
     def won?
+        return false if !@towers[0].empty? || !@towers[1].empty? 
         sorted = @towers[2].sort.reverse
         (0...sorted.length-1).each do |i|
-            return false if arr[i+1] > arr[i]
-        end 
+            return false if sorted[i+1] > sorted[i]
+        end
         true
     end
 

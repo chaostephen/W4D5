@@ -45,8 +45,16 @@ describe Hanoi do
     end
 
     describe "#won?" do
+        subject(:hanoi2) {Hanoi.new}
         it "return true if won" do
-            expect(hanoi.won?).to eq(true)
+            expect(hanoi2.move).to eq(true)
+            expect(hanoi2.move).to eq(true)
+            expect(hanoi2.move).to eq(true)
+            expect(hanoi2.move).to eq(true)
+            expect(hanoi2.move).to eq(true)
+            expect(hanoi2.move).to eq(true)
+            expect(hanoi2.move).to eq(true)
+            expect(hanoi2.won?).to eq(true)
         end
     end
 end
