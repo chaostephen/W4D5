@@ -33,3 +33,11 @@ describe "stock_picker" do
         expect(stock_picker(stocks)).to eq(profits)
     end
 end
+
+describe Hanoi do
+    describe "#move" do
+        it "moves correctly" do
+            
+        end
+    end
+end
